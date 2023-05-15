@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "middleName": {
+      "type": "string"
+    },
+    "mobilePhone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "passportNumber": {
+      "type": "string"
+    },
+    "clientId": {
+      "type": "string"
+    },
+    "clientStatus": {
+      "type": "string"
+    },
+    "countryOfResidence": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "firstName",
+    "lastName",
+    "middleName",
+    "mobilePhone",
+    "email",
+    "passportNumber",
+    "clientId",
+    "clientStatus",
+    "countryOfResidence"
+  ]
+}
