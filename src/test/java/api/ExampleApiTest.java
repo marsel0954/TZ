@@ -8,7 +8,7 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInC
 
 public class ExampleApiTest extends BaseApiTest {
 
-    /*Проверки*/
+    /*Проверки2*/
 
     @Test(description = "Получение информации о клиенте")
     public void getInformationAboutUser() {
