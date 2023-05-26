@@ -1,6 +1,5 @@
 package ui.afiinityBank;
 
-import org.openqa.selenium.By;
 import ui.afiinityBank.core.BaseTest;
 import org.testng.annotations.Test;
 import ui.afiinityBank.pages.LoginPage;
