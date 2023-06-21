@@ -12,7 +12,6 @@ import java.util.List;
 
 
 public class DatabaseTest {
-
     private java.sql.Connection connection;
     @BeforeTest
     public void setUp() throws SQLException {
