@@ -1,4 +1,4 @@
-package api;
+package api.aFinnyBank;
 
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
