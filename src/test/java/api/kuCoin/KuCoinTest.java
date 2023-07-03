@@ -12,38 +12,38 @@ import static io.restassured.RestAssured.given;
 
 public class KuCoinTest {
     @Test
-    public List<TickerData> getAllTickets(){
+    public List<PojoTickerData> getAllTickets(){
 
         return given()
                 .contentType(ContentType.JSON)
                 .when().get("https://api.kucoin.com/api/v1/market/allTickers")
                 .then().log().body()
-                .extract().jsonPath().getList("data.ticker",TickerData.class);
+                .extract().jsonPath().getList("data.ticker", PojoTickerData.class);
     }
 
     @Test
     public void checkCrypto(){
-        List<TickerData> usdTickers = getAllTickets().stream().filter(s->s.getSymbol().endsWith("USDT")).collect(Collectors.toList());
+        List<PojoTickerData> usdTickers = getAllTickets().stream().filter(s->s.getSymbol().endsWith("USDT")).collect(Collectors.toList());
         int a = 0;
         Assert.assertTrue(usdTickers.stream().allMatch(x->x.getSymbol().endsWith("USDT")));
     }
     @Test
     public void sortHighToLow(){
-        List<TickerData> highToLow = getAllTickets().stream().filter(x->x.getSymbol().endsWith("USDT")).sorted(new Comparator<TickerData>() {
+        List<PojoTickerData> highToLow = getAllTickets().stream().filter(x->x.getSymbol().endsWith("USDT")).sorted(new Comparator<PojoTickerData>() {
             @Override
-            public int compare(TickerData o1, TickerData o2) {
+            public int compare(PojoTickerData o1, PojoTickerData o2) {
                 return o2.getChangeRate().compareTo(o1.getChangeRate());
             }
         }).collect(Collectors.toList());
 
-        List<TickerData> top10 = highToLow.stream().limit(10).collect(Collectors.toList());
+        List<PojoTickerData> top10 = highToLow.stream().limit(10).collect(Collectors.toList());
 
         Assert.assertEquals(top10.get(0).getSymbol(),"UBXT-USDT");
     }
 
     @Test
     public void sortLowToHigh(){
-        List<TickerData> LowToHow = getAllTickets().stream().filter(x->x.getSymbol().endsWith("USDT"))
+        List<PojoTickerData> LowToHow = getAllTickets().stream().filter(x->x.getSymbol().endsWith("USDT"))
                 .sorted(new TickerComparatorLow()).limit(10).collect(Collectors.toList());
 
         int a = 1;

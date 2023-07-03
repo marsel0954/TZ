@@ -1,8 +1,6 @@
 package api.kuCoin;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-public class TickerData {
+public class PojoTickerData {
 
     private String symbol;
     private String symbolName;
@@ -21,10 +19,10 @@ public class TickerData {
     private String takerCoefficient;
     private String makerCoefficient;
 
-    public TickerData(){
+    public PojoTickerData(){
     }
 
-    public TickerData(String symbol, String symbolName, String buy, String sell, String changeRate, String changePrice, String high, String low, String vol, String volValue, String last, String averagePrice, String takerFeeRate, String makerFeeRate, String takerCoefficient, String makerCoefficient) {
+    public PojoTickerData(String symbol, String symbolName, String buy, String sell, String changeRate, String changePrice, String high, String low, String vol, String volValue, String last, String averagePrice, String takerFeeRate, String makerFeeRate, String takerCoefficient, String makerCoefficient) {
         this.symbol = symbol;
         this.symbolName = symbolName;
         this.buy = buy;
