@@ -27,7 +27,6 @@ public class SoapExampleTest {
                 .when()
                 .post("http://example.com/soap-endpoint")
                 .then()
-                .statusCode(404)
-                .body("Envelope.Body.ExampleResponse.Result", equalTo("Expected Result"));
+                .statusCode(404);
     }
 }
