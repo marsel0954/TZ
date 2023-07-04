@@ -3,7 +3,7 @@
 <suite name="Suite" parallel="classes" thread-count="1">
     <test name="Test">
         <classes>
-            <class name="DatabaseTest"/>
+            <class name="db.DatabaseTest"/>
         </classes>
     </test>
 </suite>

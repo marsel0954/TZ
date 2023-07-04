@@ -1,3 +1,5 @@
+package db;
+
 import dataBase.Connection;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
