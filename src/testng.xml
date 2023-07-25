@@ -3,7 +3,7 @@
 <suite name="Suite" parallel="classes" thread-count="1">
     <test name="Test">
         <classes>
-            <class name="db.DatabaseTest"/>
+            <class name="soap.SoapExampleTest"/>
         </classes>
     </test>
 </suite>
