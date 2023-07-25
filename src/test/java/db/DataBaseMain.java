@@ -40,6 +40,26 @@ public class DataBaseMain {
 
         return results;
     }
+    protected void showSoutDB(String query) throws SQLException {
+        ResultSet resultSet = Connection.statement.executeQuery(query);
+        List<String> results = new ArrayList<>();
+
+        while (resultSet.next()) {
+            String resultUserName = resultSet.getString("userName");
+            String resultIduser = resultSet.getString("iduser");
+            String resultSurName = resultSet.getString("userSurname");
+            String resultAge = resultSet.getString("age");
+            results.add(resultIduser);
+            results.add(resultUserName);
+            results.add(resultSurName);
+            results.add(resultAge);
+        }
+        System.out.println("Записи в бд " + results);
+
+    }
+
+
+
     protected void addNewUser(String iduserValue, String usernameValue, String userSurnameValue, String ageValue) throws SQLException {
         String addUserSQL = "INSERT INTO mydbautotest.datatest (iduser, userName, userSurname, age) " +
                 "VALUES " + "('" + iduserValue + "'," + "'" + usernameValue + "'," + "'" + userSurnameValue + "',"
